@@ -190,7 +190,9 @@ def zipWith(fn):
 
     """
     # TODO: Implement for Task 0.3.
-    return lambda list1, list2: [fn(element1, element2) for element1, element2 in zip(list1, list2)]
+    return lambda list1, list2: [
+        fn(element1, element2) for element1, element2 in zip(list1, list2)
+    ]
 
 
 def addLists(ls1, ls2):
@@ -221,8 +223,8 @@ def reduce(fn, start):
         for element in list:
             output = fn(element, output)
         return output
+
     return reducer
-        
 
 
 def sum(ls):
