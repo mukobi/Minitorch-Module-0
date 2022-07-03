@@ -164,13 +164,13 @@ def map(fn):
         new list
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError("Need to implement for Task 0.3")
+    return lambda list: [fn(element) for element in list]
 
 
 def negList(ls):
     "Use :func:`map` and :func:`neg` to negate each element in `ls`"
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError("Need to implement for Task 0.3")
+    return map(neg)(ls)
 
 
 def zipWith(fn):
@@ -190,13 +190,13 @@ def zipWith(fn):
 
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError("Need to implement for Task 0.3")
+    return lambda list1, list2: [fn(element1, element2) for element1, element2 in zip(list1, list2)]
 
 
 def addLists(ls1, ls2):
     "Add the elements of `ls1` and `ls2` using :func:`zipWith` and :func:`add`"
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError("Need to implement for Task 0.3")
+    return zipWith(add)(ls1, ls2)
 
 
 def reduce(fn, start):
@@ -216,16 +216,22 @@ def reduce(fn, start):
         fn(x_1, x_0)))`
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError("Need to implement for Task 0.3")
+    def reducer(list):
+        output = start
+        for element in list:
+            output = fn(element, output)
+        return output
+    return reducer
+        
 
 
 def sum(ls):
     "Sum up a list using :func:`reduce` and :func:`add`."
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError("Need to implement for Task 0.3")
+    return reduce(add, 0)(ls)
 
 
 def prod(ls):
     "Product of a list using :func:`reduce` and :func:`mul`."
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError("Need to implement for Task 0.3")
+    return reduce(mul, 1)(ls)
