@@ -44,9 +44,11 @@ class Module:
         # TODO: Implement for Task 0.4.
         output = list(self._parameters.items())
         for module_name, module in self._modules.items():
-            output += [(module_name + '.' + param_name, param) for param_name, param in module.named_parameters()]
+            output += [
+                (module_name + '.' + param_name, param)
+                for param_name, param in module.named_parameters()
+            ]
         return output
-
 
     def parameters(self):
         "Enumerate over all the parameters of this module and its descendents."

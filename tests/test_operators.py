@@ -26,7 +26,6 @@ import pytest
 from minitorch import MathTest
 
 
-
 # ## Task 0.1 Basic hypothesis tests.
 
 

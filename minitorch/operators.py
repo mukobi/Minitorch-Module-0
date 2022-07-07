@@ -164,13 +164,22 @@ def map(fn):
         new list
     """
     # TODO: Implement for Task 0.3.
-    return lambda list: [fn(element) for element in list]
+    # return lambda list: [fn(element) for element in list]
+
+    def new_function(list):
+        output = []
+        for elem in list:
+            output.append(fn(elem))
+        return output
+        
+    return new_function
 
 
 def negList(ls):
     "Use :func:`map` and :func:`neg` to negate each element in `ls`"
     # TODO: Implement for Task 0.3.
-    return map(neg)(ls)
+    neg_function = map(neg)
+    return neg_function(ls)
 
 
 def zipWith(fn):
